@@ -1,0 +1,20 @@
+{
+    "name": "octava/job-queue-bundle",
+    "description": "One more wrapper for jms/job-queue-bundle",
+    "type": "bundle",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "jms/job-queue-bundle": "^2.0-@dev"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Octava\\Bundle\\JobQueueBundle\\": ""
+        }
+    }
+}

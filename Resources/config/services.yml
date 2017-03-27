@@ -1,0 +1,7 @@
+parameters:
+    octava.job_queue.config.class: \Octava\Bundle\JobQueueBundle\Config
+
+services:
+    octava.job_queue.config:
+        class: '%octava.job_queue.config.class%'
+        arguments: [[]]
