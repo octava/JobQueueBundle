@@ -1,7 +1,21 @@
 parameters:
-    octava.job_queue.config.class: \Octava\Bundle\JobQueueBundle\Config
+    octava.job_queue.config.class: Octava\Bundle\JobQueueBundle\Config
 
 services:
     octava.job_queue.config:
         class: '%octava.job_queue.config.class%'
         arguments: [[]]
+
+    octava.job_queue.manager:
+        class: Octava\Bundle\JobQueueBundle\Manager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@octava.job_queue.config'
+
+    octava_job_queue.admin.job:
+        class: Octava\Bundle\JobQueueBundle\Admin\JobAdmin
+        arguments: [~, JMS\JobQueueBundle\Entity\Job, OctavaJobQueueBundle:JobAdmin]
+        calls:
+            - [setTranslationDomain, ['OctavaJobQueueBundle']]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: JobQueue }

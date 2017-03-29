@@ -24,5 +24,8 @@ class OctavaJobQueueExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $definition = $container->getDefinition('octava.job_queue.config');
+        $definition->setArguments([$config]);
     }
 }
