@@ -8,9 +8,11 @@ In this case **job queue** means **server**.
 $manager = $container->get('octava_bundle_job_queue.manager');
 $job = new Job('cache:clear');
 
-$jobCollection = $manager->broadcast($job); //create job for all queues
+$jobs = $manager->broadcast($job); //create job for all queues
 or
-$jobCollection = $manager->distinct($job); //create job for a default queue 
+$jobs = $manager->distinct($job); //create job for a default queue 
+
+$manager->flush($jobs);
 ```
 
 ## Installation

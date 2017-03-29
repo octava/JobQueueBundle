@@ -42,14 +42,14 @@ class Manager
 
     /**
      * @param Job $job
-     * @return JobCollection
+     * @return Job[]
      */
     public function broadcast(Job $job)
     {
-        $result = new JobCollection();
+        $result = [];
         foreach ($this->config->getQueues() as $queue) {
             $newJob = $this->cloneJob($job, $queue);
-            $result->add($newJob);
+            $result[] = $newJob;
 
             $this->entityManager->persist($newJob);
         }
@@ -69,9 +69,9 @@ class Manager
         return $result;
     }
 
-    public function flush()
+    public function flush($entity)
     {
-        $this->entityManager->flush();
+        $this->entityManager->flush($entity);
     }
 
     /**
