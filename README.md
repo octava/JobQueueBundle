@@ -68,4 +68,10 @@ $bundles = array(
 );
 ```
 
+Have your app/console use JMSJobQueueBundle’s Application:
+```php
+// use Symfony\Bundle\FrameworkBundle\Console\Application;
+use JMS\JobQueueBundle\Console\Application;
+```
+
 Finally, use the console command ```ocatava-job-queue:run``` for job execution.
