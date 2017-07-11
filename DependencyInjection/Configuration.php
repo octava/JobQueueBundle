@@ -36,7 +36,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->arrayNode(Config::NODE_LOCK_COMMANDS)
                     ->info('Command list which should not run simultaneously. (max-concurrent-queues = 1)')
-                    ->defaultValue(['cache:clear'])
+                    ->defaultValue(['cache:clear', 'cache:warmup'])
                     ->prototype('scalar')->end()
                 ->end()
             ->end();
