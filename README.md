@@ -24,7 +24,8 @@ You can easily install OctavaJobQueueBundle with composer. Just add the followin
     // ...
     "require": {
         // ...
-        "jms/job-queue-bundle": "^2.0-@dev",
+        "jms/job-queue-bundle": "dev-symfony4",
+        "sonata-project/admin-bundle": "4.x-dev",
         "octava/job-queue-bundle": "3.0.x-dev"
     }
 }
