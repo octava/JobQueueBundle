@@ -1,5 +1,5 @@
 {
-    "name": "octava/job-queue-bundle",
+    "name": "dqe/job-queue-bundle",
     "description": "One more wrapper for jms/job-queue-bundle",
     "type": "bundle",
     "license": "MIT",

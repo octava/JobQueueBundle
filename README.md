@@ -26,7 +26,7 @@ You can easily install OctavaJobQueueBundle with composer. Just add the followin
         // ...
         "jms/job-queue-bundle": "dev-symfony4",
         "sonata-project/admin-bundle": "4.x-dev",
-        "octava/job-queue-bundle": "4.0.x-dev"
+        "dqe/job-queue-bundle": "4.0.x-dev"
     }
 }
 ```
@@ -52,7 +52,7 @@ octava_job_queue:
 Then, you can install the new dependencies by running composer’s update command from the directory where your composer.json file is located:
 
 ```bash
-composer update jms/job-queue-bundle octava/job-queue-bundle
+composer update jms/job-queue-bundle dqe/job-queue-bundle
 ```
 
 Now, Composer will automatically download all required files, and install them for you. Next you need to update your AppKernel.php file, and register the new bundle:
